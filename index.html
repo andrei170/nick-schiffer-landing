@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Builder's Playbook · Nick Schiffer</title>
+<meta name="description" content="The 12-week operating system for $1M-$5M custom home builders. Built by Nick Schiffer - founder of NS Builders, host of Modern Craftsman. The system behind the content.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Custom Builder's Playbook · Nick Schiffer">
+<meta property="og:description" content="If you've been watching the process - this is what you do with it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://andrei170.github.io/nick-schiffer-landing/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  /* Modern Craftsman palette: deep charcoal, warm timber, off-white */
+  :root{--bg-deep:#0d0c0b;--bg-elev:#181614;--bg-card:rgba(28,25,22,0.75);--accent:#8a7355;--accent-bright:#a8906d;--text-primary:#f0ebe3;--text-secondary:#b0a898;--text-muted:#7a736a;--border:rgba(138,115,85,0.18);--border-strong:rgba(138,115,85,0.45);--accent-soft:rgba(138,115,85,0.08)}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg-deep);color:var(--text-primary);line-height:1.6;overflow-x:hidden}
+  body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 10% 0%,rgba(138,115,85,0.06),transparent 50%),radial-gradient(circle at 90% 100%,rgba(138,115,85,0.04),transparent 50%);pointer-events:none;z-index:0}
+  .container{max-width:1100px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+  .container-narrow{max-width:780px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+  h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;letter-spacing:-0.01em;line-height:1.15}
+  nav{position:fixed;top:0;left:0;right:0;padding:16px 0;background:rgba(13,12,11,0.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);z-index:100}
+  .nav-inner{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:0 28px}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:0.04em}
+  .nav-cta{padding:10px 22px;background:var(--accent);color:var(--text-primary);border-radius:2px;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none}
+  .nav-cta:hover{background:var(--accent-bright)}
+  .hero{padding:130px 0 50px;text-align:center}
+  .eyebrow{display:inline-block;padding:8px 18px;background:var(--accent-soft);border:1px solid var(--border-strong);border-radius:100px;font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-bright);margin-bottom:28px}
+  .hero h1{font-size:clamp(38px,5.5vw,68px);line-height:1.1;margin:0 auto 20px;max-width:880px;text-align:center;text-wrap:balance}
+  .hero h1 em{color:var(--accent);font-style:italic;font-weight:400}
+  .hero-sub{font-size:18px;color:var(--text-secondary);max-width:680px;margin:0 auto 32px;line-height:1.65;text-align:center;text-wrap:pretty}
+  .hero-meta{text-align:center;margin:0 auto 40px;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-muted)}
+  .hero-meta span{margin:0 14px}
+  .brand-disclaimer{text-align:center;margin:0 auto 32px;font-size:12px;color:var(--text-muted);font-style:italic;max-width:680px;line-height:1.55}
+  .cta-primary{display:inline-block;padding:18px 44px;background:var(--accent);color:var(--text-primary);border-radius:3px;font-size:14px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s ease;box-shadow:0 12px 30px rgba(138,115,85,0.2)}
+  .cta-primary:hover{background:var(--accent-bright);transform:translateY(-2px)}
+  section{padding:80px 0}
+  .section-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;text-align:center}
+  .section-title{font-size:clamp(32px,4.5vw,52px);margin-bottom:18px;text-align:center}
+  .section-title em{color:var(--accent);font-style:italic;font-weight:400}
+  .section-intro{font-size:17px;color:var(--text-secondary);max-width:680px;margin:0 auto 56px;line-height:1.65;text-align:center}
+  .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1000px;margin:0 auto}
+  @media(max-width:760px){.who-grid{grid-template-columns:1fr}}
+  .who-card{padding:36px 28px;background:var(--bg-card);border:1px solid var(--border);border-radius:3px}
+  .who-card .num{font-family:'Cormorant Garamond',serif;font-size:48px;color:var(--accent);font-weight:600;line-height:1;margin-bottom:12px}
+  .who-card h3{font-size:21px;margin-bottom:12px;color:var(--text-primary)}
+  .who-card p{color:var(--text-secondary);font-size:14px;line-height:1.7}
+  .pillar-list{max-width:880px;margin:0 auto}
+  .pillar{padding:36px 32px;background:var(--bg-card);border:1px solid var(--border);border-radius:3px;margin-bottom:18px}
+  .pillar .pillar-num{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--accent);text-transform:uppercase;letter-spacing:0.16em;margin-bottom:10px;font-weight:600}
+  .pillar h3{font-size:26px;margin-bottom:14px;color:var(--text-primary)}
+  .pillar .outcome{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--accent-bright);font-style:italic;line-height:1.4;margin-bottom:14px}
+  .pillar p{color:var(--text-secondary);font-size:15px;line-height:1.7}
+  .work-note{margin:48px auto 0;padding:24px 28px;max-width:780px;text-align:center;font-style:italic;color:var(--text-secondary);font-size:15px;line-height:1.7;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .founder-block{display:flex;flex-direction:column;gap:36px;max-width:880px;margin:0 auto;align-items:center}
+  .founder-text{width:100%;text-align:left}
+  .founder-text .name-loc{font-size:13px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:14px}
+  .founder-text h3{font-size:32px;margin-bottom:18px}
+  .founder-text .key-quote{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--text-primary);font-style:italic;line-height:1.4;margin-bottom:24px;padding:18px 22px;border-left:3px solid var(--accent);background:var(--accent-soft)}
+  .founder-text p{color:var(--text-secondary);font-size:15px;line-height:1.75;margin-bottom:14px}
+  .founder-text .key-statement{font-weight:600;color:var(--text-primary);font-size:16px;margin:18px 0;line-height:1.6}
+  .founder-text ul{list-style:none;padding:0;margin:18px 0 0 0}
+  .founder-text li{padding:6px 0;color:var(--text-secondary);font-size:14px;border-bottom:1px solid var(--border)}
+  .founder-text li:last-child{border-bottom:0}
+  .founder-text li::before{content:"·";color:var(--accent);margin-right:10px;font-weight:bold}
+  .founder-text .trust-badge{display:inline-block;margin-top:20px;padding:8px 14px;background:var(--accent-soft);border:1px solid var(--border-strong);border-radius:100px;font-size:12px;color:var(--accent-bright);letter-spacing:0.08em}
+  .receipts-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1080px;margin:0 auto}
+  @media(max-width:760px){.receipts-wall{grid-template-columns:1fr}}
+  .receipt{padding:28px 24px;background:var(--bg-card);border:1px solid var(--border);border-radius:3px;font-style:italic;color:var(--text-secondary);font-size:14px;line-height:1.65}
+  .receipt .name{display:block;margin-top:14px;font-style:normal;color:var(--accent);font-size:13px;letter-spacing:0.06em;font-weight:600}
+  .receipts-note{text-align:center;margin-top:36px;font-size:13px;color:var(--text-muted);font-style:italic;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.7}
+  .faq{max-width:780px;margin:0 auto}
+  .faq-item{padding:26px 0;border-bottom:1px solid var(--border)}
+  .faq-item h3{font-size:20px;margin-bottom:12px;color:var(--text-primary)}
+  .faq-item p{color:var(--text-secondary);font-size:15px;line-height:1.7}
+  .form-frame{max-width:680px;margin:0 auto;padding:40px;border:1px solid var(--border-strong);border-radius:6px;background:var(--bg-elev);box-shadow:0 30px 80px rgba(0,0,0,0.5)}
+  .form-frame h3{font-size:26px;margin-bottom:8px;text-align:center}
+  .form-frame p{color:var(--text-secondary);font-size:14px;text-align:center;margin-bottom:24px}
+  .typeform-iframe{width:100%;height:660px;border:0;border-radius:4px;display:block;background:var(--bg-elev)}
+  div[data-tf-live]{min-height:600px}
+  .final-cta-section{text-align:center;padding:100px 0}
+  .final-cta-section h2{font-size:clamp(32px,4vw,46px);margin-bottom:24px;max-width:780px;margin-left:auto;margin-right:auto}
+  .final-cta-section h2 em{color:var(--accent);font-style:italic;font-weight:400}
+  .final-cta-section p{font-size:17px;color:var(--text-secondary);max-width:580px;margin:0 auto 36px;line-height:1.65}
+  .final-cta-section .tagline{margin-top:48px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;color:var(--text-primary)}
+  .application-note{font-size:13px;color:var(--text-muted);margin-top:18px;letter-spacing:0.06em;font-style:italic}
+  footer{padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:13px}
+  footer .footer-meta{font-size:12px;letter-spacing:0.04em}
+  footer .footer-disclaimer{margin-top:14px;font-size:11px;color:var(--text-muted);font-style:italic}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<div class="logo">Custom Builder's Playbook</div>
+<a href="#enrol" class="nav-cta">Apply</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+<div class="eyebrow">Custom Builder's Playbook · A Course By Nick Schiffer</div>
+<h1>If you've been watching the process, <em>this is how you install it.</em></h1>
+<p class="hero-sub">A 12-week operating system for $1M-$5M custom home builders who want the system behind the @nsbuilders content - not just the inspiration. Built by a luxury GC with a decade of Eastern MA custom builds and the Modern Craftsman audience that came from documenting every one of them.</p>
+<p class="hero-meta"><span>Self-Paced + Live Q&amp;A</span>·<span>Open Enrolment</span>·<span>For $1M-$5M Custom Builders</span></p>
+<p class="brand-disclaimer">Made with my brand colours, because I couldn't identify yours. Locked to your palette on Day 1 of the install.</p>
+<a href="#enrol" class="cta-primary">Enrol Now</a>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-eyebrow">Who This Is For</div>
+<h2 class="section-title">If you've built a real custom home business, <em>and the system behind it still hasn't caught up.</em></h2>
+<div class="who-grid">
+<div class="who-card">
+<div class="num">01</div>
+<h3>The Growing GC</h3>
+<p>You've passed $1M in custom residential work. The margin is inconsistent, the sub bench is unreliable, and every Friday is recovery from the week before. You need the system before you take on another project.</p>
+</div>
+<div class="who-card">
+<div class="num">02</div>
+<h3>The Multi-Project Operator</h3>
+<p>You're running $2M-$5M across three or more active builds. You spend more time managing chaos than managing craft. The Playbook is the structural fix for the operations layer underneath.</p>
+</div>
+<div class="who-card">
+<div class="num">03</div>
+<h3>The @nsbuilders Follower</h3>
+<p>You've watched the process across dozens of reels and episodes. You understand the Modern Craftsman standard. You want to build to it - and the Playbook is the installable version of everything the content shows.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background:linear-gradient(180deg,transparent,rgba(138,115,85,0.04),transparent)">
+<div class="container">
+<div class="section-eyebrow">The Work</div>
+<h2 class="section-title">Six modules. <em>Built by a luxury GC.</em></h2>
+<p class="section-intro">No fluff. No marketing theory. The whole thing is built around installable systems from the actual NS Builders process.</p>
+<div class="pillar-list">
+<div class="pillar">
+<div class="pillar-num">Module One · Weeks 1-2</div>
+<h3>Client Systems</h3>
+<p class="outcome">By the end of week 2, you have an intake process that qualifies custom home buyers before you pull plans - eliminating the price-shopper problem at the front of the pipeline.</p>
+<p>The first conversation framework that separates serious clients from tire-kickers. The proposal structure that sets budget expectations before design begins. The signed-scope discipline that protects margin from scope creep on month three. Includes the NS Builders intake template, ready to install.</p>
+</div>
+<div class="pillar">
+<div class="pillar-num">Module Two · Weeks 3-4</div>
+<h3>Estimating for Margin</h3>
+<p class="outcome">By the end of week 4, the cost-build sheet is pulling 10-18% margin recovery into every bid you write.</p>
+<p>The line items most custom builders forget to price. The sub cost buffer that absorbs schedule variance without eating your margin. The homeowner pushback script when the budget conversation gets uncomfortable. The price-test playbook that protects margin without losing good clients.</p>
+</div>
+<div class="pillar">
+<div class="pillar-num">Module Three · Weeks 5-6</div>
+<h3>Project Management Without Firefighting</h3>
+<p class="outcome">By the end of week 6, the Monday rhythm is running and Friday afternoons are strategy again.</p>
+<p>The dispatch rule that keeps a custom build on schedule. The three reports worth reading before anything else on Monday. The callback system that handles sub issues before they become client issues. The weekly cadence that runs without you in the room.</p>
+</div>
+<div class="pillar">
+<div class="pillar-num">Module Four · Weeks 7-8</div>
+<h3>Sub Relationships That Hold</h3>
+<p class="outcome">By the end of week 8, the sub bench is stable and your best framers are choosing your projects over higher-paying work elsewhere.</p>
+<p>The first-day conversation that sets expectations both ways. The payment structure that keeps quality subs loyal through a tight market. How to build a bench that fills without poaching. The conversation most GCs avoid until the relationship is already damaged.</p>
+</div>
+<div class="pillar">
+<div class="pillar-num">Module Five · Weeks 9-10</div>
+<h3>Modern Craftsman Positioning</h3>
+<p class="outcome">By the end of week 10, the way you present your work means price is the last thing clients ask about - not the first.</p>
+<p>How craft-led positioning separates a quality builder from a commodity GC. The documentation habit that makes projects photographable and referrable. The client communication standard that drives word-of-mouth without asking for it. The brand discipline that compounds over years of consistent work.</p>
+</div>
+<div class="pillar">
+<div class="pillar-num">Module Six · Weeks 11-12</div>
+<h3>Scale or Stay - The Owner's Choice</h3>
+<p class="outcome">By the end of week 12, the decision about where to take the business next is made from data, not exhaustion.</p>
+<p>The capacity ceiling most $3M builders hit - and the two paths through it. The hire that changes the operations layer before you need it. The financial model for scaling from 8 to 20 custom homes per year. The exit-prep architecture for the builder who eventually wants the business to run without them.</p>
+</div>
+</div>
+<p class="work-note">Live Q&amp;A with Nick the first Tuesday of every month. Lifetime access to module video, templates, and SOPs. Includes the cost-build sheet, intake template, sub retention framework, and weekly cadence guide - all installable on a Monday.</p>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-eyebrow">About Nick</div>
+<h2 class="section-title">From Eastern MA luxury builds to Modern Craftsman. <em>Now: the playbook.</em></h2>
+<div class="founder-block">
+<div class="founder-text">
+<div class="name-loc">Nick Schiffer · Founder, NS Builders · Eastern Massachusetts</div>
+<h3>About Nick</h3>
+<div class="key-quote">"The content shows the work. <em>The Playbook installs the system behind it.</em>"</div>
+<p>Nick Schiffer has been building custom luxury homes in Eastern Massachusetts since 2014. NS Builders is the construction company behind the Modern Craftsman content brand - a decade of actual builds, documented and shared with the 237K @nsbuilders audience and the Modern Craftsman podcast listenership. The systems in this course are the ones running inside NS Builders on every active project.</p>
+<p class="key-statement">The Modern Craftsman standard is not about making the work look good on camera. It is about building the system that makes the work consistently good - on every project, with every crew, regardless of who is watching.</p>
+<ul>
+<li>Founder, NS Builders · Eastern MA luxury custom residential since 2014</li>
+<li>@nsbuilders · 237K · Modern Craftsman content brand</li>
+<li>Host, Modern Craftsman podcast</li>
+<li>A decade of documented custom home builds across Eastern Massachusetts</li>
+</ul>
+<span class="trust-badge">@nsbuilders · 237K · Modern Craftsman</span>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background:linear-gradient(180deg,transparent,rgba(138,115,85,0.04),transparent)">
+<div class="container">
+<div class="section-eyebrow">A Note On Receipts</div>
+<h2 class="section-title">The proof is in the builds, <em>not the page.</em></h2>
+<p class="section-intro">Below are placeholder receipts for the Playbook cohort - real numbers swap in after the first cohort runs. The deeper proof is in NS Builders (a decade of Eastern MA luxury builds), the @nsbuilders content brand, and the Modern Craftsman podcast audience built without paid ads.</p>
+<div class="receipts-wall">
+<div class="receipt">"Used the estimating module in week one. Caught a $22K error in a bid I'd already sent. Recalculated, had the conversation, the client stayed. That paid for the course forty times over."<span class="name">- Custom builder, New England</span></div>
+<div class="receipt">"The sub retention framework changed how I run the first-day conversation. Lost zero framers to competitors in the six months after I installed it."<span class="name">- Residential GC, Northeast</span></div>
+<div class="receipt">"Came in at $1.4M. Closed the year at a $2.8M run rate. Same crew, better systems. The Monday cadence alone was worth the enrolment."<span class="name">- Custom builder, $1M-$3M custom residential</span></div>
+</div>
+<p class="receipts-note">Placeholder receipts. Real cohort testimonials swap in after the first 12-week cohort completes.</p>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-eyebrow">FAQ</div>
+<h2 class="section-title">Common questions, <em>before applying.</em></h2>
+<div class="faq">
+<div class="faq-item"><h3>I already follow @nsbuilders. Is this just the same content?</h3><p>No. The content shows the work - what the build looks like, how decisions get made on site. The Playbook installs the system behind the decisions: the estimating sheet, the sub retention framework, the weekly cadence, the intake process. The content is the why. The Playbook is the how, made installable.</p></div>
+<div class="faq-item"><h3>How fast will I see results?</h3><p>Most builders install the estimating module (module 2) within the first 7 days of enrolment and catch at least one margin error in the next bid they write. The sub retention conversation takes longer - usually one good hire cycle. The weekly cadence typically changes Fridays within 4-6 weeks of module 3 going live.</p></div>
+<div class="faq-item"><h3>Is this the Modern Craftsman Mastermind?</h3><p>No. The Mastermind is the high-ticket group cohort for $1M+ custom builders and is separate. The Playbook is the self-paced course that sits below it. Many Playbook graduates apply for the Mastermind 6-12 months later once the systems from the course are running.</p></div>
+<div class="faq-item"><h3>What is the time commitment?</h3><p>3-4 hours per week for 12 weeks. Module video is async. One live Q&amp;A with Nick the first Tuesday of every month. Recordings available if you miss the live session.</p></div>
+<div class="faq-item"><h3>What is the investment?</h3><p>The Playbook is available at two tiers. The standard tier includes the full curriculum, monthly Q&amp;A, and lifetime access. The premium tier adds a personal video review of your custom build business by Nick. Both tiers are a one-time payment.</p></div>
+<div class="faq-item"><h3>What if I am past $5M in custom residential?</h3><p>The Playbook is built for $1M-$5M operators. If you are past $5M, modules 5 and 6 are still relevant - but the on-ramp problems we solve in modules 1-4 are mostly behind you. The Modern Craftsman Mastermind application is the better fit.</p></div>
+<div class="faq-item"><h3>Refund policy?</h3><p>Yes. Complete the first two modules, decide the system is not a fit for your business, full refund within 14 days of enrolment. No questions.</p></div>
+<div class="faq-item"><h3>Will the templates work in my market?</h3><p>Yes. The templates are build-stage-specific, not market-specific. Eastern MA, Pacific Northwest, Texas, anywhere - if you are $1M-$5M custom residential, the operations systems install.</p></div>
+</div>
+</div>
+</section>
+
+<section id="enrol" style="background:linear-gradient(180deg,transparent,rgba(138,115,85,0.04),transparent)">
+<div class="container-narrow">
+<div class="section-eyebrow">Enrol</div>
+<h2 class="section-title">Join the next cohort.</h2>
+<p class="section-intro">Four-minute application. Direct enrolment on submit. Cohorts open quarterly, capped at 100 to keep the live Q&amp;A useful.</p>
+<div class="form-frame">
+<h3>Custom Builder's Playbook · Application</h3>
+<p>Four minutes to fill in. We will be back to you within 48 hours.</p>
+<a href="https://calendly.com/ag-copy/call-with-andrei" target="_blank" class="cta-primary" style="display:inline-block;margin:24px 0">Book your cohort call</a>
+<p style="font-size:14px;opacity:0.7;margin-top:12px">15-minute call to walk you through the modules and confirm cohort fit. Direct enrolment after the call.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container-narrow">
+<div class="final-cta-section">
+<h2>If you've watched the process, this is the conversation you've been <em>waiting to have.</em></h2>
+<p>Application takes four minutes. After you submit, you pick a time directly from the cohort calendar. No setter calls. No back-and-forth. Straight to enrolment.</p>
+<a href="#enrol" class="cta-primary">Apply To Enrol</a>
+<p class="application-note">Four-minute form · Direct enrolment on submit</p>
+<p class="tagline">Build the system. <em>Not just the house.</em></p>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p class="footer-meta">Custom Builder's Playbook · Nick Schiffer · 2026</p>
+<p class="footer-disclaimer">Sample landing page built by AG1 Consulting. Made with my brand colours, because I couldn't identify yours. Locked to your palette on Day 1 of the install.</p>
+</div>
+</footer>
+
+<script src="//embed.typeform.com/next/embed.js"></script>
+</body>
+</html>
